@@ -1,0 +1,81 @@
+@import './styles/weather';
+
+
+@import "./styles/variables/colors";
+@import "./styles/variables/font";
+@import "./styles/variables/functions";
+
+
+
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-family: $font-family;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+#root{
+    width: 100%;
+    height: inherit;
+    background: $VeryLightGray;
+    position: relative;
+}
+
+.auth{
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: transparent;
+    border: 1px solid rgba($color: #685a5a, $alpha: 1.0);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 3rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.signout{
+    grid-area: signout;
+    width: 100%;
+    max-width: 375px;
+    background: transparent;
+    border: none;
+    color: $DarkBlue;
+    background: $VeryLightGray;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 81px 3px rgba(189, 176, 176, 0.7);
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    position: absolute;
+    bottom: 3.5rem;
+    left: 50%;
+    translate: -50%;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .signout{
+        bottom: 2rem;
+    }
+}
+

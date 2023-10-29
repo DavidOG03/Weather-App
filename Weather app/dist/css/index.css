@@ -1,0 +1,328 @@
+.app {
+  width: auto;
+  height: 100vh;
+  overflow: scroll;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(157, 227, 251, 0.75) 0%, rgba(157, 227, 251, 0.75) 73%, rgba(233, 244, 246, 0.75) 100%), url(/images/background.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 81px 3px rgba(0, 0, 0, 0.75);
+}
+.app::-webkit-scrollbar {
+  display: none;
+}
+.app .search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+.app .search-bar #place {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  color: rgba(34, 96, 129, 0.85);
+  border: none;
+  border-radius: 2rem;
+  background: hsl(189deg, 44%, 94%);
+  box-shadow: 0px 0px 18px 3px rgba(189, 176, 176, 0.3);
+  outline: none;
+  width: 100%;
+}
+.app .search-bar #place::-moz-placeholder {
+  color: rgba(34, 96, 129, 0.75);
+}
+.app .search-bar #place:-ms-input-placeholder {
+  color: rgba(34, 96, 129, 0.75);
+}
+.app .search-bar #place::placeholder {
+  color: rgba(34, 96, 129, 0.75);
+}
+.app .search-bar #search {
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 39px;
+}
+.app .search-bar #search img {
+  height: 39px;
+  width: auto;
+}
+.app .search-bar #search:hover {
+  cursor: pointer;
+}
+.app .search-bar #search:hover img {
+  opacity: 0.75;
+}
+.app .forecast {
+  width: 100%;
+  height: auto;
+  background: hsl(189deg, 44%, 94%);
+  border-radius: 2rem;
+  box-shadow: 0px 0px 18px 3px rgba(189, 176, 176, 0.3);
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+.app .forecast-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.app .forecast .location {
+  color: hsl(201deg, 58%, 32%);
+  font-size: 1.5rem;
+  font-weight: 500;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.app .forecast .location span {
+  height: 100%;
+  margin-right: 0.5rem;
+}
+.app .forecast .location span img {
+  width: auto;
+  height: 100%;
+}
+.app .forecast .cloud {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: auto auto 1rem auto;
+  filter: drop-shadow(2px);
+}
+.app .forecast .temperature {
+  color: hsl(201deg, 58%, 32%);
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+}
+.app .forecast .description {
+  color: hsl(201deg, 58%, 32%);
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+}
+.app .details {
+  width: 100%;
+  height: 100;
+  background: hsl(189deg, 44%, 94%);
+  border-radius: 2rem;
+  box-shadow: 0px 0px 18px 3px rgba(189, 176, 176, 0.3);
+  padding: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.app .details .humidity, .app .details .wind-speed, .app .details .pressure, .app .details .latitude {
+  height: 4rem;
+  width: 45%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  flex-basis: auto;
+}
+.app .details .humidity img, .app .details .wind-speed img, .app .details .pressure img, .app .details .latitude img {
+  width: auto;
+  height: 2rem;
+}
+.app .details .humidity div, .app .details .wind-speed div, .app .details .pressure div, .app .details .latitude div {
+  display: flex;
+  flex-direction: column;
+}
+.app .details .humidity div span, .app .details .wind-speed div span, .app .details .pressure div span, .app .details .latitude div span {
+  display: block;
+  width: 100%;
+  font-size: 0.76rem;
+  font-weight: weight(bold);
+}
+.app .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app .time > div {
+  font-size: 1.3rem;
+  color: hsl(201deg, 58%, 32%);
+}
+.app .error {
+  width: 100%;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  translate: -50% 0;
+  font-size: 1rem;
+  font-weight: weight(light);
+  text-align: center;
+  color: hsl(201deg, 58%, 32%);
+}
+
+@media screen and (min-width: 600px) {
+  .app {
+    border-radius: 2.5rem;
+    margin: auto;
+    box-shadow: 0px 0px 21px 3px rgba(189, 176, 176, 0.3);
+    padding: 1rem;
+    width: 90%;
+    max-width: 30rem;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+  }
+  .app #place {
+    font-size: 1rem;
+  }
+  .app .forecast-top {
+    margin-bottom: 1rem;
+  }
+  .app .cloud {
+    width: 35%;
+  }
+  .app .details .humidity div span, .app .details .wind-speed div span, .app .details .pressure div span, .app .details .latitude div span {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .app {
+    height: auto;
+    padding: 1rem;
+    max-height: 40rem;
+    max-width: 50rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    grid-template-areas: "search search" "forecast details" "forecast signout";
+  }
+  .app .search-bar {
+    grid-area: search;
+  }
+  .app .search-bar #place {
+    font-size: 1rem;
+  }
+  .app .forecast {
+    grid-area: forecast;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    margin-bottom: unset;
+  }
+  .app .forecast-top {
+    display: flex;
+  }
+  .app .details {
+    grid-area: details;
+    height: auto;
+    display: flex;
+    align-self: flex-start;
+  }
+  .app .details .humidity, .app .details .wind-speed, .app .details .pressure, .app .details .latitude {
+    height: 4rem;
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    flex-basis: auto;
+  }
+  .app .details .humidity img, .app .details .wind-speed img, .app .details .pressure img, .app .details .latitude img {
+    width: auto;
+    height: 2rem;
+  }
+  .app .details .humidity div, .app .details .wind-speed div, .app .details .pressure div, .app .details .latitude div {
+    display: flex;
+    flex-direction: column;
+    font-weight: weight(semibold);
+  }
+  .app .details .humidity div span, .app .details .wind-speed div span, .app .details .pressure div span, .app .details .latitude div span {
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: weight(bold);
+  }
+}
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: inherit;
+  background: hsl(189deg, 44%, 94%);
+  position: relative;
+}
+
+.auth {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: transparent;
+  border: 1px solid #685a5a;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 3rem;
+}
+.auth:hover {
+  cursor: pointer;
+}
+
+.signout {
+  grid-area: signout;
+  width: 100%;
+  max-width: 375px;
+  background: transparent;
+  border: none;
+  color: hsl(201deg, 58%, 32%);
+  background: hsl(189deg, 44%, 94%);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 81px 3px rgba(189, 176, 176, 0.7);
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  translate: -50%;
+}
+.signout:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .signout {
+    bottom: 2rem;
+  }
+}/*# sourceMappingURL=index.css.map */
